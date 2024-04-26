@@ -1,0 +1,50 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int * mergeArr(int* arr1, int len1, int* arr2, int len2 ){
+    int *arr = new int[len1+len2];
+    
+    int i=0,j=0,k=0;
+    
+    while(j<len1&&k<len2){
+        if(arr1[j]<arr2[k]){
+            arr[i++]=arr1[j++];
+        }
+        else{
+            arr[i++]=arr2[k++];
+        }
+    }
+    
+    while(j<len1){
+        arr[i++]=arr[j++];
+    }
+    
+    while(k<len2){
+        arr[i++]=arr[k++];
+    }
+    
+    return arr;
+}
+
+int main(){
+    int arr1[] = {1,4,678,478,9};
+    int arr2[] = {34,67,45,33,23};
+    int len1, len2;
+    
+    len1 = sizeof(arr1)/sizeof(arr1[0]);
+    len2 = sizeof(arr2)/sizeof(arr2[0]);
+    
+    int* arr;
+    
+    arr = mergeArr(arr1, len1, arr2, len2);
+    
+    sort(arr, arr+(len1+len2));
+    
+    for(int i=0; i<(len1+len2); i++){
+        cout<<arr[i]<<" ";
+    }
+    
+    delete[] arr;
+    
+}
