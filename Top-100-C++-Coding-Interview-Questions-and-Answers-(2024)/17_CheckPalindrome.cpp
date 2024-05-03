@@ -20,6 +20,20 @@ bool palindrome(long num){
     return true;
 }
 
+bool palindrome_num(long num){
+    
+    long number = num, rev=0;
+    while(number!=0){
+        rev=rev*10 +number%10;
+        number=number/10;
+    }
+    if(num==rev){
+        return true;
+    }
+    
+    return false;
+}
+
 int main(){
     
     long num;
@@ -27,8 +41,8 @@ int main(){
     cout<<"Enter the number to check it is palindrome or not : ";
     cin>>num;
     
-    cout<<num<<(palindrome(num)?" is a palindrome number":" is not a palindrome number");
-    
+    cout<<num<<(palindrome(num)?" is a palindrome number":" is not a palindrome number"))<<endl;
+    cout<<num<<(palindrome_num(num)?" is a palindrome number":" is not a palindrome number");
     
     return 0;
 }
