@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int fact(int num){
+    int res =1;
+    
+    if(num==0||num==1){
+        return 1;
+    }
+    else{
+        for(int i=2;i<=num;i++){
+            res*=i;
+        }
+    }
+    
+    return res;
+}
+
+int main(){
+    
+    int num;
+    
+    cout<<"Enter the number which factorial you wants to find : ";
+    cin>>num;
+    
+    cout<<"Factorial of "<<num<<" is "<<fact(num);
+    
+    return 0;
+}
